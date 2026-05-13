@@ -65,7 +65,7 @@ pipeline {
                 sh '''
                     # Clone the config repository
                     rm -rf config-repo || true
-                    git clone https://github.com/Neeraj-op/config-repo
+                    git clone https://github.com/Neeraj-op/my-app-config-repo
                     
                     # Update deployment.yaml with new image tag
                     cd config-repo
