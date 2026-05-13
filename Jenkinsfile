@@ -70,13 +70,14 @@ pipeline {
 
                 bat '''
                     REM Delete old repo if exists
-                    if exist config-repo rmdir /s /q config-repo
+                    if exist config-repo rmdir /s /q my-app-config-repo
+
 
                     REM Clone config repo
                     git clone https://github.com/Neeraj-op/my-app-config-repo.git
 
                     REM Go inside repo
-                    cd config-repo
+                    cd my-app-config-repo
 
                     REM Update deployment.yaml image tag
                     powershell -Command "(Get-Content manifests/deployment.yaml) -replace 'image: .*','image: %DOCKER_IMAGE%:%BUILD_TAG%' | Set-Content manifests/deployment.yaml"
