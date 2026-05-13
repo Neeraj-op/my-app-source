@@ -35,7 +35,7 @@ pipeline {
                 echo 'Running unit tests...'
 
                 bat '''
-                    pytest test_app.py -v --tb=short
+                    python -m pytest test_app.py -v --tb=short
                 '''
             }
         }
